@@ -10,11 +10,18 @@ const network = (name, network_id, gas) => ({
 
 module.exports = {
   networks: {
+    // development: {
+    //   host: "localhost",
+    //   port: 8545,
+    //   network_id: "*", // Match any network id
+    //   gas: 6283185
+    // },
     development: {
-      host: "localhost",
-      port: 8545,
-      network_id: "*", // Match any network id
-      gas: 6283185
+      host: '127.0.0.1',
+      port: 23889, // janus QTUM-ETH RPC bridge
+      network_id: '*', // eslint-disable-line camelcase
+      from: '0x7926223070547d2d15b2ef5e7383e541c338ffe9',
+      gasPrice: '0x64', // minimal gas for qtum
     },
     ganache: {
       host: "ganache",
